@@ -10,8 +10,21 @@ namespace LINQtoTMX.Serializable
     [Serializable]
     public class TranslationUnitVariant
     {
-        [XmlAttribute("xml:lang")]
+        //changed from "xml:lang" to "lang" was null before when parsed
+        [XmlAttribute("lang")]
         public string Language { get; set; }
+        
+        [XmlAttribute("changeid")]
+        public string ChangeId { get; set; }
+
+        [XmlAttribute("changedate")]
+        public string ChangeDate { get; set; }
+
+        [XmlAttribute("creationid")]
+        public string CreationId { get; set; }
+
+        [XmlAttribute("creationdate")]
+        public string CreationDate { get; set; }
 
         [XmlElement("seg")]
         public string Segment { get; set; }
